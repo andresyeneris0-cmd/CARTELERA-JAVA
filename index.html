@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Qué es JavaScript</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="menu">
+        <a href="index.html" class="activo">Qué es JavaScript</a>
+        <a href="fundamentos.html">Fundamentos</a>
+        <a href="control.html">Control del flujo</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="portada">
+        <h1>Introducción a JavaScript</h1>
+        <p class="lead">Portada: breve guía de referencia y ejemplos ejecutables.</p>
+        </form>
+      </section>
+
+      <section class="tema">
+        <h2>Qué es JavaScript</h2>
+
+        <h3>Definición</h3>
+        <p>
+          JavaScript es un lenguaje de programación que permite añadir
+          comportamiento a las páginas web. HTML define el contenido, CSS la
+          apariencia y JavaScript el comportamiento.
+        </p>
+
+        <h3>Historia</h3>
+        <p>
+          Fue creado por <strong>Brendan Eich</strong> en Netscape. Originalmente
+          llamado <em>Mocha</em>, luego <em>LiveScript</em> y finalmente
+          <em>JavaScript</em>. El estándar se llama <strong>ECMAScript</strong>,
+          y versiones como <em>ES6/ES2015</em> añadieron muchas mejoras.
+        </p>
+
+        <h3>Resumen (tabla)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Año</th>
+              <th>Evento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1995</td>
+              <td>Creación por Brendan Eich (Netscape)</td>
+            </tr>
+            <tr>
+              <td>2015</td>
+              <td>ES6 / ES2015 (gran actualización)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>¿Dónde se ejecuta?</h3>
+        <ul>
+          <li>En navegadores (Chrome, Firefox, Edge, Safari).</li>
+          <li>En servidores con Node.js.</li>
+        </ul>
+
+        <h3>Diferencia entre Java y JavaScript</h3>
+        <p>
+          A pesar del nombre, son lenguajes diferentes: Java es tipado estático
+          y orientado a objetos clásico; JavaScript es dinámico y originalmente
+          pensado para manipular el DOM en el navegador.
+        </p>
+
+        <h3>Código de ejemplo</h3>
+        <pre><code>// Ejemplo: función que saluda
+function saludar(nombre) {
+  return `Hola, ${nombre}!`;
+}
+console.log(saludar('Estudiante'));
+</code></pre>
+
+        <h3>Botón "Saludar"</h3>
+        <p>Este botón mostrará la fecha y hora exactas al momento de presionarlo.</p>
+        <button id="btnSaludar">Saludar</button>
+        <div id="resultadoSaludo" aria-live="polite"></div>
+
+        <h3>Error frecuente</h3>
+        <p>
+          Olvidar colocar el script al final o usar un selector que no existe,
+          lo que provoca errores en la consola.
+        </p>
+
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="anio"></span> - Aprendizaje JavaScript</p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

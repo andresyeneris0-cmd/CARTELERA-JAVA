@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Control del flujo</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="menu">
+        <a href="index.html">Qué es JavaScript</a>
+        <a href="fundamentos.html">Fundamentos</a>
+        <a href="control.html" class="activo">Control del flujo</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Control del flujo en JavaScript</h1>
+
+      <section>
+        <h2>Condicionales</h2>
+
+        <h3>Explicación</h3>
+        <p>
+          Las estructuras condicionales permiten ejecutar código según
+          condiciones: <code>if</code>, <code>else if</code>, <code>else</code>
+          y <code>switch</code>. Los operadores de comparación incluyen
+          <code>===</code>, <code>!==</code>, <code>&gt;</code>, <code>&lt;</code>,
+          etc. Los operadores lógicos son <code>&&</code>, <code>||</code>, y
+          <code>!</code>.
+        </p>
+
+        <h3>Código</h3>
+        <pre><code>// if/else example
+const nota = 4.2;
+if (nota >= 4.5) {
+  console.log('Superior');
+} else if (nota >= 4.0) {
+  console.log('Alto');
+} else if (nota >= 3.0) {
+  console.log('Básico');
+} else {
+  console.log('Bajo');
+}
+</code></pre>
+
+        <h3>Demostración: clasificador de notas (0–5)</h3>
+        <form onsubmit="return false;">
+          <label for="notaInput">Nota (0-5):</label>
+          <input id="notaInput" name="notaInput" placeholder="ej. 4.2" />
+          <button id="btnClasificarNota">Clasificar</button>
+        </form>
+        <div id="resultadoNota" aria-live="polite"></div>
+
+        <h3>Error frecuente</h3>
+        <p>
+          No validar la entrada del usuario (por ejemplo usar <code>NaN</code>
+          o valores fuera de rango) produce resultados incorrectos o errores.
+        </p>
+      </section>
+
+      <section>
+        <h2>Ciclos</h2>
+
+        <h3>Explicación</h3>
+        <p>
+          Los bucles permiten repetir acciones: <code>for</code>,
+          <code>while</code>, <code>do...while</code> y <code>for...of</code>.
+          Use <code>break</code> y <code>continue</code> para controlar el flujo.
+        </p>
+
+        <h3>Código</h3>
+        <pre><code>// for: tabla de multiplicar
+for (let i = 1; i <= 10; i++) {
+  console.log(`${n} x ${i} = ${n * i}`);
+}
+
+// for...of: iterar caracteres
+for (const c of 'hola') {
+  console.log(c);
+}
+</code></pre>
+
+        <h3>Demostración principal: tabla de multiplicar</h3>
+        <form onsubmit="return false;">
+          <label for="numeroMultiplicar">Número:</label>
+          <input id="numeroMultiplicar" name="numeroMultiplicar" placeholder="5" />
+          <button id="btnGenerarTabla">Generar tabla</button>
+        </form>
+        <pre id="tablaMultiplicar" aria-live="polite"></pre>
+
+        <h3>Segundo ejemplo de ciclo (for...of y break/continue)</h3>
+        <p>Itera una palabra, muestra hasta la letra 'o' y salta vocales.</p>
+        <button id="btnEjemploForOf">Ejecutar ejemplo for...of</button>
+        <pre id="resultadoForOf" aria-live="polite"></pre>
+
+        <h3>Error frecuente</h3>
+        <p>
+          No controlar condiciones de parada en <code>while</code> o usar
+          incorrectamente <code>break</code>/<code>continue</code> puede crear
+          bucles infinitos.
+        </p>
+      </section>
+
+      <p>
+        Ir a: <a href="index.html">Portada</a> — <a href="fundamentos.html">Fundamentos</a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="anio"></span> - Aprendizaje JavaScript</p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

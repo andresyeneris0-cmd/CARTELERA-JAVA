@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fundamentos de JavaScript</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="menu">
+        <a href="index.html">Qué es JavaScript</a>
+        <a href="fundamentos.html" class="activo">Fundamentos</a>
+        <a href="control.html">Control del flujo</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Fundamentos de JavaScript</h1>
+
+      <section>
+        <h2>Variables</h2>
+
+        <h3>Explicación</h3>
+        <p>
+          En JavaScript se usan <strong>let</strong> para variables que pueden
+          cambiar y <strong>const</strong> para valores constantes. La diferencia
+          principal es que <em>const</em> no permite reasignación.
+        </p>
+
+        <h3>Código mostrado</h3>
+        <pre><code>// let y const
+let nombre = 'Ana';
+const PI = 3.1416;
+nombre = 'Luis'; // válido
+// PI = 3; // error: reasignación no permitida
+</code></pre>
+
+        <h3>Demostración (Guardar mi nombre → mostrarlo → cambiarlo)</h3>
+        <form onsubmit="return false;">
+          <label for="inputNombre">Tu nombre:</label>
+          <input id="inputNombre" name="inputNombre" placeholder="Escribe tu nombre" />
+          <button id="btnGuardarNombre">Guardar</button>
+          <button id="btnCambiarNombre" type="button">Cambiar</button>
+        </form>
+        <p>Nombre guardado: <strong id="muestraNombre">—</strong></p>
+
+        <h3>Error frecuente</h3>
+        <p>
+          Declarar variables sin usar <code>let</code> o <code>const</code> (por
+          ejemplo usando variables implícitas) puede crear propiedades globales
+          y causar conflictos.
+        </p>
+      </section>
+
+      <section>
+        <h2>Datos y tipos de datos</h2>
+
+        <h3>Explicación</h3>
+        <p>
+          JavaScript tiene varios tipos primitivos y objetos. El operador
+          <code>typeof</code> permite conocer el tipo de un valor.
+        </p>
+
+        <h3>Tabla de tipos</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>String</td><td>"Hola"</td></tr>
+            <tr><td>Number</td><td>19</td></tr>
+            <tr><td>Boolean</td><td>true</td></tr>
+            <tr><td>Undefined</td><td>let x;</td></tr>
+            <tr><td>Null</td><td>null</td></tr>
+            <tr><td>BigInt</td><td>9007199254740993n</td></tr>
+            <tr><td>Symbol</td><td>Symbol("id")</td></tr>
+            <tr><td>Object</td><td>{ a: 1 }</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Demostración (typeof)</h3>
+        <form onsubmit="return false;">
+          <label for="tipoEjemplo">Elige un ejemplo:</label>
+          <select id="tipoEjemplo">
+            <option value="string">String ("Hola")</option>
+            <option value="number">Number (19)</option>
+            <option value="boolean">Boolean (true)</option>
+            <option value="undefined">Undefined (let x;)</option>
+            <option value="null">Null (null)</option>
+            <option value="bigint">BigInt (900719...n)</option>
+            <option value="symbol">Symbol (Symbol("id"))</option>
+            <option value="object">Object ({ a: 1 })</option>
+          </select>
+          <button id="btnMostrarTipo">Mostrar tipo</button>
+        </form>
+        <div id="tipoResultado" aria-live="polite"></div>
+
+        <h3>Error frecuente</h3>
+        <p>
+          Esperar que <code>typeof null</code> devuelva "null" — en JavaScript
+          devuelve "object" por compatibilidad histórica.
+        </p>
+      </section>
+
+      <section>
+        <h2>Operación de asignación</h2>
+
+        <h3>Explicación</h3>
+        <p>Los operadores de asignación combinan operación y asignación:</p>
+        <ul>
+          <li><code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></li>
+          <li>Incremento/decremento: <code>++</code>, <code>--</code></li>
+        </ul>
+
+        <h3>Código mostrado</h3>
+        <pre><code>// contador simple
+let contador = 0;
+contador += 1;
+contador--;
+</code></pre>
+
+        <h3>Demostración: contador</h3>
+        <div class="contador">
+          <button id="btnRestar">Restar 1</button>
+          <span id="valorContador">0</span>
+          <button id="btnSumar">Sumar 1</button>
+          <div>
+            <button id="btnReiniciar">Reiniciar</button>
+          </div>
+        </div>
+
+        <h3>Error frecuente</h3>
+        <p>
+          Mezclar operadores de asignación en una misma expresión sin paréntesis
+          puede llevar a resultados inesperados.
+        </p>
+      </section>
+
+      <p>
+        Ir a: <a href="index.html">Portada</a> — <a href="control.html">Control</a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="anio"></span> - Aprendizaje JavaScript</p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
